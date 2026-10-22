@@ -13,10 +13,10 @@
             @csrf
 
             <div class="form-group">
-                <label for="nama">Nama Pelapor</label>
-                <input type="text" id="nama" name="nama" value="{{ old('nama') }}" placeholder="Nama lengkap Anda"
-                       class="@error('nama') has-error @enderror" required>
-                @error('nama')
+                <label for="nama_pelapor">Nama Pelapor</label>
+                <input type="text" id="nama_pelapor" name="nama_pelapor" value="{{ old('nama_pelapor', Auth::user()->name) }}" placeholder="Nama lengkap Anda"
+                       class="@error('nama_pelapor') has-error @enderror" required>
+                @error('nama_pelapor')
                     <span class="error-text">{{ $message }}</span>
                 @enderror
             </div>
@@ -31,20 +31,20 @@
             </div>
 
             <div class="form-group">
-                <label for="tinggi">Tinggi Genangan Air (cm)</label>
-                <input type="number" id="tinggi" name="tinggi" value="{{ old('tinggi') }}" min="0" placeholder="Contoh: 45"
-                       class="@error('tinggi') has-error @enderror" required>
-                @error('tinggi')
+                <label for="tinggi_genangan">Tinggi Genangan Air (cm)</label>
+                <input type="number" id="tinggi_genangan" name="tinggi_genangan" value="{{ old('tinggi_genangan') }}" min="0" placeholder="Contoh: 45"
+                       class="@error('tinggi_genangan') has-error @enderror" required>
+                @error('tinggi_genangan')
                     <span class="error-text">{{ $message }}</span>
                 @enderror
                 <small class="form-hint">Kurang dari 30 cm: Waspada, 30&ndash;70 cm: Siaga, lebih dari 70 cm: Awas.</small>
             </div>
 
             <div class="form-group">
-                <label for="tanggal">Tanggal Kejadian</label>
-                <input type="date" id="tanggal" name="tanggal" value="{{ old('tanggal') }}"
-                       class="@error('tanggal') has-error @enderror" required>
-                @error('tanggal')
+                <label for="tanggal_kejadian">Tanggal Kejadian</label>
+                <input type="date" id="tanggal_kejadian" name="tanggal_kejadian" value="{{ old('tanggal_kejadian') }}"
+                       class="@error('tanggal_kejadian') has-error @enderror" required>
+                @error('tanggal_kejadian')
                     <span class="error-text">{{ $message }}</span>
                 @enderror
             </div>
